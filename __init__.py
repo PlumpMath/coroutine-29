@@ -6,10 +6,10 @@ Based on David Beazley's coroutine code from http://dabeaz.com/coroutines/
 coroutine(func) - Calls .next() on func to init func as a coroutine
 
 --control coroutines--
-broadcast    - forwards what is sent to it to each coroutine provided as an
-               argument
-thread       - Creates N threads and uses them to parallelize the pipeline
-multiprocess - Creates N processes and uses them to parallelize the pipeline
+broadcast      - forwards what is sent to it to each coroutine provided as an
+                 argument
+threaded       - Creates N threads and uses them to parallelize the pipeline
+multiprocessed - Creates N processes and uses them to parallelize the pipeline
 
 --sinks--
 sinks.printer         - Prints whatever is sent to it.
@@ -23,6 +23,6 @@ utility.dirwalk   - Walk a directory structure and send file paths to target
 utility.co_filter - Filters data using a function
 """
 
-from coroutine import coroutine, broadcast, thread, multiprocess
+from coroutine import coroutine, broadcast, threaded, multiprocessed
 import sinks
 import utility
