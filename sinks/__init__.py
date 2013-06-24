@@ -1,13 +1,14 @@
+__all__ = ['printer', 'locking_printer']
+
 from coroutine import coroutine
 
 @coroutine
 def printer():
-    """Coroutine.  Prints what is sent to it.
+    """
+    Coroutine.  Prints what is sent to it.
     
     .send() accepts data to print
 
-    arguments:
-    None
     """
     while True:
         try:
@@ -19,12 +20,16 @@ def printer():
 
 @coroutine
 def locking_printer(lock):
-    """Coroutine.  Prints what is .sent() to it.  Locks on 'lock'.  This 
+    """
+    Coroutine.  Prints what is .sent() to it.  Locks on 'lock'.
 
     .send() accepts data to print
 
-    arguments:
-    lock - threading.Lock or multiprocessing.Lock (a semaphore will work as well)
+    Parameters:
+
+    - `lock`: threading.Lock or multiprocessing.Lock (a semaphore will
+              work as well)
+
     """
     while True:
         try:
